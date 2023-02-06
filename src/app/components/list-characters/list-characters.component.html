@@ -1,0 +1,52 @@
+<div class="main_content" *ngIf="info">
+
+  <div class="header">
+      <button mat-icon-button class="btn_back" routerLink="/home">
+          <mat-icon>arrow_back</mat-icon>
+        </button>
+
+        <h1>Rick and Morty: Characters</h1>
+
+        
+
+        <mat-form-field>
+          <mat-label>Search Character</mat-label>
+          <input matInput type="text" [(ngModel)]="search">
+          
+          
+          <button matSuffix mat-icon-button (click)="this.listCharacters(1);">
+            <mat-icon>search</mat-icon>
+          </button>
+          
+          <button matSuffix *ngIf="search" mat-icon-button  (click)="this.clear();">
+            <mat-icon matSuffix>close</mat-icon>
+          </button>
+
+
+        </mat-form-field>
+
+    </div>
+  
+  <div class="content" >
+    
+        <mat-card *ngFor="let character of characters">
+          <img [src]="character.image" alt="">
+
+          <div class="card_id">#{{character.id}}</div>
+
+            <mat-card-content>
+              <h2>{{character.name}}</h2>
+
+              <span class="subtitle">Status: <span class="text">{{character.status}}</span></span><br/>
+              <span class="subtitle">Gender: <span class="text">{{character.gender}}</span></span><br/>
+              <span class="subtitle">Specie: <span class="text">{{character.species}}</span></span>
+            </mat-card-content>
+          </mat-card>
+
+    </div>
+  
+    <div class="container_load_more">
+      <button matSuffix mat-raised-button  *ngIf="info.pages > page" (click)="this.loadMore()">Load more</button>
+    </div>
+    
+</div>

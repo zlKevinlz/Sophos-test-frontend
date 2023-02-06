@@ -1,0 +1,33 @@
+.main_content {
+    background: #d3dfe6;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .introduction {
+        background: #53abee;
+        text-align: center;
+        padding: 50px;
+        margin: 50px;
+        border-radius: 15px;
+
+        h1{
+            margin-bottom: 20px;
+            font-size: 30px;
+            font-weight: 600;
+        }
+
+        .desctiption{
+            font-size: 17px !important;
+        }
+
+        .btn {
+            background: #d3dfe6;
+            color: black;
+            margin-top: 20px;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+    }
+}
